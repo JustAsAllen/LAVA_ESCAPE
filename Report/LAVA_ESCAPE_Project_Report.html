@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
+    color: #111827;
+    background: #ffffff;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    position: relative;
+    page-break-after: always;
+    padding: 16mm 16mm 20mm;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26pt;
+    color: #0f172a;
+    letter-spacing: .5px;
+  }
+  h2 {
+    font-size: 13pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #0f172a;
+    border-bottom: 2px solid #ea580c;
+    padding-bottom: 5px;
+    margin: 6mm 0 4mm;
+  }
+  h3 { font-size: 11pt; color: #1e293b; margin: 0 0 2mm; }
+  p, li { font-size: 10pt; line-height: 1.55; color: #1f2937; }
+  ul { margin: 2mm 0 3mm 6mm; }
+  li { margin-bottom: 1.2mm; }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 4mm;
+    margin-bottom: 3.5mm;
+  }
+  .tag {
+    display: inline-block;
+    background: #fff7ed;
+    border: 1px solid #fdba74;
+    color: #9a3412;
+    border-radius: 20px;
+    padding: 1.5mm 4mm;
+    font-size: 9pt;
+    margin: 0 1.5mm 1.5mm 0;
+  }
+  .chip {
+    display: inline-block;
+    background: #fff7ed;
+    border: 1px solid #fdba74;
+    color: #9a3412;
+    border-radius: 6px;
+    padding: 2mm 3.5mm;
+    text-align: center;
+    margin: 1mm;
+    min-width: 30mm;
+  }
+  .chip b { display: block; font-size: 13pt; color: #c2410c; }
+  .chip span { font-size: 8pt; color: #6b7280; text-transform: uppercase; letter-spacing: .5px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 2mm 0 3mm; }
+  th {
+    text-align: left;
+    background: #f1f5f9;
+    color: #0f172a;
+    padding: 2mm 3mm;
+    border: 1px solid #d1d5db;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 8.5pt;
+  }
+  td { padding: 2.2mm 3mm; border: 1px solid #d1d5db; vertical-align: top; }
+
+  .shot {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(15,23,42,.10);
+    margin-bottom: 1.5mm;
+  }
+  .cap { font-size: 8.5pt; color: #6b7280; margin: 0 0 3mm 1mm; }
+
+  .kbd {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-bottom-width: 3px;
+    border-radius: 4px;
+    padding: 0 2.5mm;
+    font-family: Consolas, monospace;
+    font-size: 8.5pt;
+    color: #1e293b;
+    white-space: nowrap;
+  }
+  .code {
+    font-family: Consolas, monospace;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 3mm 4mm;
+    font-size: 8.5pt;
+    color: #0f172a;
+    white-space: pre-wrap;
+  }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+  .graynote { color: #6b7280; font-size: 8.5pt; }
+  .rule { height: 1px; background: linear-gradient(90deg, transparent, #ea580c, #fdba74, transparent); }
+
+  .contrib {
+    display: flex;
+    align-items: center;
+    gap: 6mm;
+    border: 1px solid #d1d5db;
+    border-left: 4px solid #ea580c;
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 5mm 6mm;
+    margin-bottom: 4mm;
+  }
+  .contrib .no {
+    flex: 0 0 14mm;
+    height: 14mm;
+    border-radius: 50%;
+    background: #ea580c;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contrib .name { font-size: 12.5pt; font-weight: 600; color: #0f172a; }
+  .contrib .reg { font-size: 9.5pt; color: #6b7280; margin-top: 1mm; }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 : CONTRIBUTORS ================= -->
+<div class="page" style="padding-top:22mm;">
+  <div style="text-align:center;">
+    <div style="font-size:11pt; letter-spacing:3px; color:#ea580c;">EXTENDED REALITIES &middot; ADS351</div>
+    <div style="font-size:12pt; letter-spacing:6px; color:#0f172a; margin-top:2mm; text-transform:uppercase;">Project Report</div>
+  </div>
+
+  <div class="rule" style="margin:8mm 0;"></div>
+
+  <h1 style="text-align:center; font-size:30pt;">Contributors</h1>
+  <p style="text-align:center; font-size:10.5pt; color:#4b5563; margin-top:3mm;">
+    Project: <b>LAVA ESCAPE</b> &mdash; Extended Realities, ADS351<br>
+    B.Tech Artificial Intelligence &amp; Machine Learning &middot; 2026&ndash;2027
+  </p>
+
+  <div style="margin-top:12mm;">
+    <div class="contrib">
+      <div class="no">1</div>
+      <div>
+        <div class="name">Allen Saji</div>
+        <div class="reg">Register No. &nbsp;2562305</div>
+      </div>
+    </div>
+    <div class="contrib">
+      <div class="no">2</div>
+      <div>
+        <div class="name">Joy Samson A</div>
+        <div class="reg">Register No. &nbsp;2562325</div>
+      </div>
+    </div>
+    <div class="contrib">
+      <div class="no">3</div>
+      <div>
+        <div class="name">Amogh Kadekar</div>
+        <div class="reg">Register No. &nbsp;2562306</div>
+      </div>
+    </div>
+    <div class="contrib">
+      <div class="no">4</div>
+      <div>
+        <div class="name">Christo Ajith</div>
+        <div class="reg">Register No. &nbsp;2562311</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin:10mm 0 8mm;"></div>
+
+  <div style="text-align:center;" class="graynote">
+    School of Engineering &amp; Technology &middot; CHRIST (Deemed to be University), Kumbalagodu, Bengaluru-560 074
+  </div>
+</div>
+
+<!-- ================= PAGE 2 : TITLE / ABSTRACT ================= -->
+<div class="page">
+  <div style="text-align:center; margin-top:4mm;">
+    <div style="font-size:11pt; letter-spacing:3px; color:#ea580c;">EXTENDED REALITIES &middot; ADS351</div>
+    <div style="font-size:12pt; letter-spacing:6px; color:#0f172a; margin-top:2mm; text-transform:uppercase;">Project&nbsp;Report</div>
+  </div>
+
+  <div class="rule" style="margin:6mm 0;"></div>
+
+  <div style="text-align:center; margin-top:6mm;">
+    <div style="font-size:48pt; font-family:Georgia, serif; font-weight:700; letter-spacing:2px; color:#0f172a;">
+      LAVA ESCAPE
+    </div>
+    <div style="font-size:13pt; color:#b45309; margin-top:3mm; letter-spacing:3px; text-transform:uppercase;">
+      First-Person Lava Parkour Speedrunner
+    </div>
+  </div>
+
+  <div style="margin-top:8mm;">
+    <h2>Abstract</h2>
+    <p style="font-size:10.5pt;">
+      <b>LAVA ESCAPE</b> is an immersive first-person parkour speedrunning experience built in the
+      Unity Engine using the Universal Render Pipeline (URP). The player flows through a procedurally
+      constructed multi-stage obstacle course &mdash; precision platforming, curved suspension-bridge
+      beams, and ascending jumps &mdash; while chasing checkpoints, collecting 13&nbsp;diamonds, and beating
+      a live split timer. A custom ShaderLab Voronoi&ndash;fBM <b>lava shader</b> floods the canyon floor
+      beneath the entire course, turning every mistimed jump into a fiery respawn back to the last
+      checkpoint. The project pairs a polished game-feel layer (dash slow-motion, coyote time, jump
+      buffering, slide &amp; sprint) with a fully aligned HUD and an ESC pause menu.
+    </p>
+  </div>
+
+  <div style="margin-top:8mm;">
+    <h2>Quick Facts</h2>
+    <div style="text-align:center;">
+      <span class="chip"><b>11</b><span>Checkpoints</span></span>
+      <span class="chip"><b>13</b><span>Diamonds</span></span>
+      <span class="chip"><b>6</b><span>Course Stages</span></span>
+      <span class="chip"><b>0.2&times;</b><span>Dash Slow-Mo</span></span>
+      <span class="chip"><b>1920&times;1080</b><span>Reference UI</span></span>
+    </div>
+  </div>
+
+  <div style="margin-top:8mm;">
+    <h2>Technology Used</h2>
+    <div>
+      <span class="tag">Unity 6000.5.10f1 (LTS)</span>
+      <span class="tag">Universal Render Pipeline</span>
+      <span class="tag">C# &amp; .NET</span>
+      <span class="tag">Unity Input System</span>
+      <span class="tag">ShaderLab / HLSL</span>
+      <span class="tag">URP Volume (Bloom / CA / Vignette)</span>
+      <span class="tag">HDRI Panoramic Skylight</span>
+      <span class="tag">Editor Scripting</span>
+      <span class="tag">Procedural Level Generation</span>
+      <span class="tag">Windows Standalone</span>
+      <span class="tag">Custom Build Pipeline</span>
+    </div>
+  </div>
+
+  <div style="position:absolute; bottom:14mm; left:16mm; right:16mm; text-align:center;" class="graynote">
+    Extended Realities &middot; ADS351 &middot; B.Tech Artificial Intelligence &amp; Machine Learning &middot; CHRIST University &middot; 2026&ndash;2027
+  </div>
+</div>
+
+<!-- ================= PAGE 3 : HOW IT WAS MADE ================= -->
+<div class="page">
+  <h1>How the Game Was Made in Unity</h1>
+  <p style="margin-top:3mm; margin-bottom:4mm;">
+    LAVA ESCAPE was built end-to-end in Unity 6000.5.10f1. Rather than hand-placing objects in the
+    editor, the <b>entire game is authored in C#</b> &mdash; the level, materials, lighting, UI and even the
+    build are generated and verified by code. Here is the process at a glance:
+  </p>
+
+  <div class="card">
+    <h3>1. Project setup</h3>
+    <p>Created with the <b>Universal Render Pipeline (URP)</b> template and the new <b>Input System</b>.
+    The source scene is blank &mdash; nothing is placed by hand.</p>
+  </div>
+  <div class="card">
+    <h3>2. Procedural level generation</h3>
+    <p>An <b>Editor tool (CourseBuilder)</b> builds the world from code: a linear cursor advances along
+    +Z and lays out decks, micro-platforms, a curved beam bridge, gates, 11 checkpoints, 13 diamonds and
+    hazards &mdash; then adds lighting, the skybox and every material in the same pass.</p>
+  </div>
+  <div class="card">
+    <h3>3. Shading &amp; the lava</h3>
+    <p>Materials are created in code, but the hero look is a <b>custom ShaderLab/HLSL shader</b>
+    (<span style="font-family:Consolas,monospace; background:#fff7ed; border:1px solid #fdba74; border-radius:4px; padding:0 2mm;">MC_Lava</span>)
+    that combines Voronoi cell cracking with 5-octave fractional-Brownian-motion noise for flow and
+    glow, lit by URP forward rendering with bloom.</p>
+  </div>
+  <div class="card">
+    <h3>4. Gameplay systems</h3>
+    <p><b>PlayerController</b> adds coyote time (0.18&nbsp;s), jump buffering (0.14&nbsp;s), sprint, slide,
+    and a slow-motion dash (<b>Time.timeScale</b> &rarr; 0.2&times;). <b>GameManager</b> owns the run timer,
+    best time, deaths, checkpoint respawns, gem collection and all game events.</p>
+  </div>
+  <div class="card">
+    <h3>5. UI, pause &amp; feel</h3>
+    <p>A <b>ScreenSpace-overlay canvas</b> is assembled in code with anchored panels (deaths/gems,
+    timer, checkpoint, dash, hints), a victory panel and an <b>ESC pause menu</b>. Hazards kill on
+    contact with a respawn cooldown; death bursts sell the feedback.</p>
+  </div>
+  <div class="card">
+    <h3>6. Automated build</h3>
+    <p>A <b>custom editor pipeline</b> regenerates the whole level and compiles the Windows player via
+    two headless Unity jobs, verified by <span style="font-family:Consolas,monospace;">REGEN_SUCCEEDED</span>
+    and <span style="font-family:Consolas,monospace;">BUILD_SUCCEEDED</span> log markers.</p>
+  </div>
+</div>
+
+<!-- ================= PAGE 4 : OVERVIEW + FEATURES ================= -->
+<div class="page">
+  <h1>Game Overview</h1>
+  <p style="margin-top:3mm;">
+    LAVA ESCAPE drops the player at a floating stone gate above a boiling lava canyon. Every stage of
+    the linear course is generated procedurally from code: start sprint deck, precision-hop micro
+    platforms, a curved wooden beam bridge suspended over the lava, ascending stair-step platforms,
+    and a glowing finish gate that triggers the victory panel. A roaming in-game clock tracks the run;
+    the best completed time is remembered across attempts.
+  </p>
+
+  <h2>Feature Highlights</h2>
+  <div class="card">
+    <h3>Living lava ocean</h3>
+    <p>A 1600&times;2400&nbsp;unit emissive sea sits beneath the entire course. Its surface is animated by a
+    custom Voronoi + Fractal-Brownian-Motion shader (<span class="code" style="display:inline; padding:0 2mm; background:#fff7ed; border-color:#fdba74;">MC_Lava</span>)
+    that layers crack formation, churning crust, and hot/white glow that responds to world-space flow.</p>
+  </div>
+  <div class="card">
+    <h3>Checkpoint &amp; respawn loop</h3>
+    <p>Falling into lava or touching a spinning hazard scripts a death &mdash; a brief ghost burst, a 0.6&nbsp;s
+    cooldown, then a teleport back to the most recent checkpoint. 11&nbsp;checkpoints divide the course,
+    and the HUD badge updates live (<b>CP&nbsp;3&nbsp;/&nbsp;11</b>).</p>
+  </div>
+  <div class="card">
+    <h3>Game-feel movement stack</h3>
+    <p>WASD movement with 0.18&nbsp;s <b>coyote time</b> and 0.14&nbsp;s <b>jump buffer</b>; quick-tap Shift
+    triggers a <b>dash</b> that drops time to <b>0.2&times;</b> slow-motion; holding Shift sprints; Ctrl slides;
+    R instantly restarts.</p>
+  </div>
+  <div class="card">
+    <h3>Cinematic day sky &amp; lighting</h3>
+    <p>RenderSettings draws a partly-cloudy HDRI panorama; a warm key sun (intensity&nbsp;1.15), a cool
+    fill light (0.28), sky-box ambient, and ExponentialSquared haze give the canyon a bright, readable,
+    premium look under bloom.</p>
+  </div>
+  <div class="card">
+    <h3>Clean, aligned UI + pause</h3>
+    <p>Canvas UI at a 1920&times;1080 reference with balanced scaling keeps every panel inside the frame.
+    Top-left deaths/gems card, top-center live timer + best, top-right checkpoint badge, bottom-left dash
+    status, bottom-centre control hints. <b>ESC</b> opens a full pause menu (Resume / Restart / Quit) with
+    lock-step time handling.</p>
+  </div>
+</div>
+
+<!-- ================= PAGE 4 : CORE SYSTEMS ================= -->
+<div class="page">
+  <h1>Core Systems &amp; Architecture</h1>
+
+  <div class="two">
+    <div class="card">
+      <h3>Procedural Level Builder</h3>
+      <p>An Editor tool (<span class="code" style="display:inline;padding:0 2mm; background:#fff7ed; border-color:#fdba74;">CourseBuilder</span>)
+      generates the entire world from code &mdash; decks, platforms, curved beams, gates, checkpoints, gems,
+      hazards &mdash; pushing a linear <b>cursor</b> along +Z so stages lay out deterministically on every
+      regen. Lighting, skybox and materials are created in the same pass.</p>
+    </div>
+    <div class="card">
+      <h3>GameManager</h3>
+      <p>A single runtime manager owns the run clock, best time, death counter, checkpoint index,
+      13-gem collection, and events (<b>OnDeath / OnCheckpointChanged / OnGemCollected / OnFinish</b>)
+      that drive every HUD element without polling.</p>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3>Hazard &amp; Kill System</h3>
+      <p>Two kill paths: <span class="code" style="display:inline;padding:0 2mm; background:#fff7ed; border-color:#fdba74;">Hazard</span>
+      markers kill on the very first physics <i>or</i> trigger contact (no lucky phase-through), and a
+      giant kill plane at the lava surface catches falls. Respawn is guarded by a 0.6&nbsp;s cooldown and
+      fires a particle burst at the death point.</p>
+    </div>
+    <div class="card">
+      <h3>Player Controller</h3>
+      <p>A single first-person controller handles ground detection, coyote time &amp; jump buffering,
+      sprint/dash/slide states, and a slow-motion time-scale (0.2&times;) that is safely restored &mdash; even if
+      the game pauses mid-dash. Teleport-to-checkpoint is non-physics (rigidbody-disabled) for
+      glitch-free landings.</p>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3>HUD Canvas Stack</h3>
+      <p>A ScreenSpace-overlay canvas builds rounded-corner pills from a procedurally generated sprite
+      &mdash; no external art assets. Every element gets explicit anchor &amp; pivot so nothing drifts off-screen,
+      with CanvasScaler matching width/height at 0.5.</p>
+    </div>
+    <div class="card">
+      <h3>Pause Menu (ESC)</h3>
+      <p><span class="kbd">ESC</span> freezes <b>Time.timeScale</b> and shows a full-screen dim panel with
+      Resume (<span class="kbd">ESC</span>), Restart (<span class="kbd">R</span>), Quit (<span class="kbd">Q</span>).
+      Restart while paused re-wires itself to avoid the stuck-at-0-timescale trap.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PAGE 5 : RENDERING/VISUALS ================= -->
+<div class="page">
+  <h1>Rendering &amp; Visual Effects</h1>
+
+  <h2>Custom Lava Shader &mdash; MC_Lava</h2>
+  <div class="card">
+    <p>The signature look: an emissive Voronoi cell layer merges with 5-octave fbm turbulence to form
+    heat-fractured crust, hot rivulets, and white-overseed glow centers. Properties expose crust / deep /
+    hot / white colors, flow speed, ripple power, churn, and emissive energy, so the whole sea can be
+    re-tuned per level.</p>
+    <table>
+      <tr><th>Pass</th><th>Method</th></tr>
+      <tr><td>Cell structure</td><td>Voronoi seed lattice &rarr; distance-to-edge for crack lines</td></tr>
+      <tr><td>Motion</td><td>Dual-direction flow UV scrolling + time-driven ripple</td></tr>
+      <tr><td>Glow</td><td>Emissive ramp into URP Bloom (0.55 threshold / 0.65 scatter)</td></tr>
+      <tr><td>Output</td><td>Universal Forward Lit, 5-octave fbm normal turbulence</td></tr>
+    </table>
+  </div>
+
+  <h2>URP Volume Stack</h2>
+  <table>
+    <tr><th>Effect</th><th>Setting</th><th>Purpose</th></tr>
+    <tr><td>Bloom</td><td>Threshold 0.55, intensity 0.65, scatter 0.65</td><td>Lava &amp; neon gates glow softly</td></tr>
+    <tr><td>Color Adjustments</td><td>Post-exposure 0.12, contrast 6, saturation 8</td><td>Punchy, readable day grading</td></tr>
+    <tr><td>Vignette</td><td>Intensity 0.26, smoothness 0.4</td><td>Centre-weighted focus for speedruns</td></tr>
+    <tr><td>Sky</td><td>Partly-cloudy HDRI panorama (kloofendal)</td><td>Bright natural daylight base</td></tr>
+    <tr><td>Fog</td><td>ExponentialSquared, density 0.0025</td><td>Atmospheric depth over the canyon</td></tr>
+  </table>
+
+  <h2>Lighting Rig</h2>
+  <div class="card">
+    <p>Warm directional <b>Sun</b> (color 1.00/0.94/0.86, intensity <b>1.15</b>, soft shadows, angled 52&deg;)
+    is the key; a cool hemisphere <b>Fill</b> (0.88/0.90/1.00, intensity <b>0.28</b>) lifts shadow areas.
+    Ambient is inherited from the skybox so the horizon tint matches the day panorama. Decking uses a
+    matte PBR finish to keep the lava as the clear hero glow.</p>
+  </div>
+</div>
+
+<!-- ================= PAGE 6 : SCREENSHOTS 1 ================= -->
+<div class="page">
+  <h1>In-Game Screenshots</h1>
+  <h2>01 &middot; The Course From Above</h2>
+  <img class="shot" src="file:///C:/Users/Allen Saji/Desktop/PARKOUR_GAME/Report/shots_small/01_hero_wide.jpg">
+  <div class="cap">Establishing frame &mdash; the full parkour spine stretches over the animated lava canyon under a partly-cloudy day sky.</div>
+
+  <h2>02 &middot; Start Gate</h2>
+  <img class="shot" src="file:///C:/Users/Allen Saji/Desktop/PARKOUR_GAME/Report/shots_small/02_start_gate.jpg">
+  <div class="cap">The spawn deck and glowing start gate &mdash; the first diamond hovers just beyond the threshold.</div>
+</div>
+
+<!-- ================= PAGE 7 : SCREENSHOTS 2 ================= -->
+<div class="page">
+  <h1>In-Game Screenshots &middot; cont.</h1>
+  <h2>03 &middot; Precision Hop Micro-Platforms</h2>
+  <img class="shot" src="file:///C:/Users/Allen Saji/Desktop/PARKOUR_GAME/Report/shots_small/03_stage1_jump.jpg">
+  <div class="cap">Stage-1 hairpin steppers demand timed jumps &mdash; missteps meet the lava below.</div>
+
+  <h2>04 &middot; Curved Beam Bridge</h2>
+  <img class="shot" src="file:///C:/Users/Allen Saji/Desktop/PARKOUR_GAME/Report/shots_small/04_beam_bridge.jpg">
+  <div class="cap">The wood beam over the chasm doubles as the course's mid-way confidence test.</div>
+</div>
+
+<!-- ================= PAGE 8 : SCREENSHOTS 3 ================= -->
+<div class="page">
+  <h1>In-Game Screenshots &middot; cont.</h1>
+  <h2>05 &middot; The Lava Sea</h2>
+  <img class="shot" src="file:///C:/Users/Allen Saji/Desktop/PARKOUR_GAME/Report/shots_small/05_lava_sea.jpg">
+  <div class="cap">Close-up of the custom Voronoi&ndash;fBM shader: crack networks, hot rivulets and white-glow cores.</div>
+
+  <h2>06 &middot; Finish Gate</h2>
+  <img class="shot" src="file:///C:/Users/Allen Saji/Desktop/PARKOUR_GAME/Report/shots_small/06_endgate.jpg">
+  <div class="cap">Crossing this gate freezes the timer and opens the COURSE CLEARED victory panel with run stats.</div>
+</div>
+
+<!-- ================= PAGE 9 : CONTROLS + BUILD/TESTING ================= -->
+<div class="page">
+  <h1>Controls, Build &amp; Testing</h1>
+
+  <h2>Controls</h2>
+  <table>
+    <tr><th style="width:40mm;">Key</th><th>Action</th></tr>
+    <tr><td><span class="kbd">W A S D</span></td><td>Move</td></tr>
+    <tr><td><span class="kbd">Mouse</span></td><td>Look</td></tr>
+    <tr><td><span class="kbd">Space</span></td><td>Jump (buffered + coyote time)</td></tr>
+    <tr><td><span class="kbd">Shift</span> tap</td><td>Dash &mdash; 0.2&times; slow-motion flair</td></tr>
+    <tr><td><span class="kbd">Shift</span> hold</td><td>Sprint</td></tr>
+    <tr><td><span class="kbd">Ctrl</span></td><td>Slide</td></tr>
+    <tr><td><span class="kbd">ESC</span></td><td>Pause menu (Resume / Restart / Quit)</td></tr>
+    <tr><td><span class="kbd">R</span></td><td>Instant restart</td></tr>
+  </table>
+
+  <h2>Automated Build Pipeline</h2>
+  <div class="card">
+    <p>Every scene change is verified through two headless Unity jobs &mdash; regenerate the level, then
+    compile the Windows player &mdash; with explicit success markers in the logs:</p>
+    <div class="code">[BuildHelper] REGEN_SUCCEEDED
+[BuildHelper] BUILD_SUCCEEDED C:/Users/.../DESKTOP/PARKOUR_GAME/Build/ParkourGame.exe</div>
+    <p class="graynote" style="margin-top:2mm;">
+      Editor methods: <b>BuildHelper.PerformRegen</b> (scene = game state), <b>BuildHelper.PerformBuild</b>
+      (Windows Standalone player), and <b>CaptureShots.Capture</b> (offscreen RT rendering, 1920&times;1080).
+    </p>
+  </div>
+
+  <h2>Testing Summary</h2>
+  <div class="two">
+    <div class="card"><h3>Gameplay</h3><ul>
+      <li>Hazard kills on physics AND trigger contact &mdash; no ghosting</li>
+      <li>Respawn cooldown + death burst verified</li>
+      <li>Dash slow-mo restores cleanly, incl. pause-during-dash</li>
+      <li>Checkpoint counter tracks 11/11 across a full run</li>
+      <li>All 13 gems collectible; victory panel totals correct</li>
+    </ul></div>
+    <div class="card"><h3>UI / Render</h3><ul>
+      <li>HUD stays inside frame at 16:9, 16:10 &amp; 21:9 references</li>
+      <li>Controls hint no longer collides with dash panel</li>
+      <li>Day skybox + fog + bloom render at near 25k-color detail</li>
+      <li>No compile errors in regen/build logs</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ================= PAGE 10 : CONCLUSION ================= -->
+<div class="page">
+  <h1>Conclusion &amp; Future Scope</h1>
+
+  <div class="card">
+    <h3>What was achieved</h3>
+    <p>LAVA ESCAPE ships a complete, playable first-person speedrunning experience: a procedurally
+    generated 6-stage course, a bespoke Voronoi&ndash;fBM lava shader, game-feel movement (dash, slide,
+    sprint, coyote time), a checkpoint/respawn loop that humbles every fall, a clean aligned HUD with
+    live splits, and a full ESC pause menu &mdash; all rendered in URP with a cinematic day mood. The entire
+    pipeline is automated: one click regenerates the world, another produces a verified Windows build.</p>
+  </div>
+
+  <div class="card">
+    <h3>Future scope</h3>
+    <ul>
+      <li>Persistent best-time leaderboards and run replays (ghost)</li>
+      <li>VR / Extended Reality camera mode &mdash; full-body presence in the canyon</li>
+      <li>Moving physics hazards &amp; responsive lava-sea breath animation</li>
+      <li>Procedural stage splicing for infinite speedrun variety</li>
+      <li>Audio: dynamic music bed that intensifies near checkpoints</li>
+    </ul>
+  </div>
+
+  <div class="rule" style="margin-top:8mm;"></div>
+
+  <div style="text-align:center; margin-top:8mm;">
+    <div style="font-size:34pt; font-family:Georgia, serif; font-weight:700; letter-spacing:2px; color:#0f172a;">
+      LAVA ESCAPE
+    </div>
+    <div style="font-size:10pt; color:#6b7280; margin-top:3mm;">
+      Extended Realities &middot; ADS351 &middot; B.Tech Artificial Intelligence &amp; Machine Learning<br>
+      School of Engineering &amp; Technology / CHRIST (Deemed to be University) &middot; Bengaluru
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

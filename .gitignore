@@ -112,3 +112,7 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+gen_log.txt
+shot1.png
+/[Aa]ssets/Dynamic Parkour System/
